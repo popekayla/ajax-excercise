@@ -8,12 +8,13 @@ function getStudents()
         {
         studentInfo = JSON.parse(xmlhttp.responseText);
 
-        let studentDisplay = "<p>" + studentInfo.student_first_name + " " + studentInfo.student_last_name + "</p>"+
-                                "<p> Major: " + studentInfo.student_major + "</p>" +
-                                "<p> Credits: " + studentInfo.student_credits + " GPA: " + studentInfo.student_gpa + "</p>" +
-                                "<p> Registration Date: " + studentInfo.student_registration_date + "</p>" 
+        let studentDisplay = "<p class='name'>" + studentInfo.student_first_name + " " + studentInfo.student_last_name + "</p>"+
+                                "<p><strong> Major:</strong> " + studentInfo.student_major + "</p>" +
+                                "<p> <strong>Credits:</strong> " + studentInfo.student_credits + " <strong>GPA:</strong> " + studentInfo.student_gpa + "</p>" +
+                                "<p><strong> Registration Date:</strong> " + studentInfo.student_registration_date + "</p>" 
 
         document.querySelector(".student").innerHTML = studentDisplay;
+        document.querySelector(".student").classList.remove("invisible");
 
         }
     }
